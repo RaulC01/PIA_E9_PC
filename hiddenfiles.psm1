@@ -17,7 +17,7 @@
     #>
     
     param (
-        [string]$Path = 'C:/Users'
+        [string]$Path = 'C:/Windows'
     )
     if (Test-Path -Path $Path) {
         Get-ChildItem -Path $Path -File -Hidden | ForEach-Object {
