@@ -17,13 +17,14 @@
     #>
     
     param (
-        [string]$path
+        [string]$Path
     )
-    if (Test-Path -Path $path) {
-        Get-ChildItem -Path $path -File -Hidden | ForEach-Object {
+    if (Test-Path -Path $Path) {
+        Get-ChildItem -Path $Path -File -Hidden | ForEach-Object {
             $_.FullName
         }
     } else {
         Write-Host "La ruta especificada no existe." -ForegroundColor Red
     }
 }
+Export-ModuleMember -Function Get-HiddenFiles
